@@ -1,0 +1,180 @@
+{% extends 'home/index.html'  %}
+{% load embed_video_tags %}
+{% load comment_tags %} 
+{% include_bootstrap %}
+
+
+{% block head %}
+<link href="/static/assets/css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- code edi... -->
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+<style>
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 0%;
+  background-color: #83cff3;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.container{
+
+   margin:5px;
+   background-color:rgb(252, 252, 250);
+   margin-left: 7pc;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container{
+
+    margin:5px;
+    background-color:rgb(252, 252, 250);
+    
+  }
+    
+}
+div.content {
+    margin-top: 5pc;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(255, 255, 255);
+    position: absolute;
+    right: 0;
+    
+} 
+
+
+.feedback {
+  background-color : #31B0D5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #46b8da;
+}
+
+#mybutton {
+  position: fixed;
+  bottom: -4px;
+  left: 10px;
+}
+
+/* video */
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#a1 {
+  text-align: center;
+  color: rgb(27, 59, 95);
+}
+
+#ab {
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+</style>
+  
+{% endblock %}
+
+{% block body %}
+
+
+<div id="ab" class="content">
+  <!-- content present below this line -->
+
+  <!-- when new topic start add this h1 tag change the topic name -->
+  <h1 id="a1"><u>Questions by Love Babbar: {{  object.tag }}</u></h1>
+  <br>
+
+
+  <!-- object will pass frome view -->
+
+    <!-- Questions Start -->
+      <div id="array1" class="container">
+        <h2>{{ object.title }}</h2>
+        <p class="article-content"> {{ object.intro }}</p>
+        
+        <pre>
+          {{ object.exmple }}
+        </pre>
+
+        <!-- body -->
+        <p class="article-content">
+          {{ object.body }}
+        </p>
+        <!-- code use  -->
+        <pre>
+          <code>
+          {{ object.code }}
+            
+          </code><!-- here write second code -->
+        </pre>
+
+          <!-- use second code solution if present check time Complexity and use "code" tag-->
+          <!-- <code>
+                write here -->
+          <!-- code --> 
+      
+          <!-- code end  -->
+      
+
+        <!-- youtube video -->
+        <div class="video-container">
+            
+          {% video object.video 'medium' %}
+        </div>
+        <br>
+        <br>
+        {% render_comments object request %} 
+
+     </div>
+
+  </div>
+    <!-- Questions end -->
+      
+</div>
+
+
+<!-- for code codeEditor -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+{% endblock %}

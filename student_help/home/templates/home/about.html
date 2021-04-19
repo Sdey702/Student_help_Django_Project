@@ -1,0 +1,371 @@
+{% extends 'home/index.html' %}
+
+{% block head %}
+<link href="/static/assets/css/style.css" rel="stylesheet">
+<!-- card -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- new card-body botton -->
+<!-- code edi... -->
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+
+<style>
+ 
+ /* about */
+    .about-back {
+        background-color: blue;
+        background-image: url(/static/assets/images/backimg.png);
+        filter: blur(8px);
+        -webkit-filter: blur(7px);
+
+        /* Full height */
+        height: 500px;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+
+    .anu {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: rgb(252, 252, 252);
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+    }
+
+
+#mid {
+    color: #000;
+    text-align: center;
+    margin-top: 9pc;
+}
+
+
+.id {
+    color: rgb(19, 13, 39);
+    text-align: center;
+    margin-top: 2pc;
+}
+
+.Card1 {
+    padding-top: 5px;
+}
+
+/* footer */
+.footer {
+    margin-top: 5px;
+}
+.icon {
+  color: #000;
+}
+
+</style>
+{%endblock%}
+
+
+
+{% block body %}
+
+<div class="container-fluid about-back ">
+</div>
+<div class="anu">
+    <h3>Being the pro in programing can be easy, especially if you follow our website</h3>
+    <a href="#mid" class="btn btn-outline-primary" role="button" aria-pressed="true">Know More</a>
+</div>
+
+
+<div class="container" id="mid">
+<br>
+<br>
+<br>
+<h1>Don't Learn Alone</h1>
+<p>Be the 'Pro' in the Programming</p>
+</div>
+
+
+<div class="box">
+    <div class="container">
+     	<div class="row">
+			 
+			    <div class="Card1 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+          
+						<img src="/static/assets/images/Abc.png" height="180px" width="390px" alt="">
+                        
+						<div class="title">
+							<h4>Prepare With Us</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Prepare for an interview and master Data structures with us designed by experts .</span>
+						</div>
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+					    
+					   
+                        <img src="/static/assets/images/grow.png" height="180px" width="190px" alt="">
+                    
+						<div class="title">
+							<h4>Grow With Us</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Gain and share your knowledge & skills with a variety of learning platforms offered by Studen help.</span>
+						</div>
+                        
+					 </div>
+				</div>	 
+				
+				 <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+                        
+                        <img src="/static/assets/images/images.jpeg" height="180px" width="320px" alt="">
+
+						<div class="title">
+							<h4>Get Hired With Us</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Don’t know where to apply? How crack interview hard questions ? Stay with us and hired.</span>
+						</div>
+					 </div>
+				</div>	 
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container id">
+    <h1>What We Offer</h1>
+    <p>We provide a variety of services for you to learn, thrive and also have fun!</p>
+</div>
+    
+
+<!-- card-body -->
+<div id="demo" class="carousel slide" data-ride="carousel"></div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="box">
+        <div class="container">
+            <div class="row">
+                
+                    <div class="card2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                
+                        <div class="box-part text-center">
+            
+                            <i class="fa fa-free-code-camp fa-3x" aria-hidden="true"></i>
+                            
+                            <div class="title">
+                                <h4>Data Structures Crash Course</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>Data structures are the pillars of coding interviews. Our video series gives you the core knowledge .</span>
+                            </div>
+                            
+                            <a href="/">Learn More</a>
+                            
+                        </div>
+                    </div>	 
+                    
+                    <div class="card2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                
+                        <div class="box-part text-center">
+                            
+                        
+                            <i class="fa fa-comments-o fa-3x" aria-hidden="true"></i>
+                        
+                            <div class="title">
+                                <h4>Comment Section</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>We provied the chat support. Everyone can ask their question & Everyone can reaply the question answer.</span>
+                            </div>
+                            
+                            <a href="#">Learn More</a>
+                            
+                        </div>
+                    </div>	 
+                    
+                    <div class="card2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                
+                        <div class="box-part text-center">
+                            
+                            <i class="fa fa-file-code-o fa-3x" aria-hidden="true"></i>
+                            
+                            <div class="title">
+                                <h4>Source Code</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>We provied the source code of each and every question. You can see the code or you can practice in this platform.</span>
+                            </div>
+                            
+                            <a href="#">Learn More</a>
+                            
+                        </div>
+                    </div>	 
+                    
+                    <div class="card2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                
+                        <div class="box-part text-center">
+                            
+                            <i class="fa fa-file-video-o fa-3x" aria-hidden="true"></i>
+                            
+                            <div class="title">
+                                <h4>Video Lectures</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>Student help are tough to learn on paper. Each and every one of our questions is accompanied by a video explanation.</span>
+                            </div>
+                            
+                            <a href="#">Learn More</a>
+                            
+                        </div>
+                    </div>	 
+                    
+                    <div class="card2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                
+                        <div class="box-part text-center">
+                            
+                            <i class="fa fa-list fa-3x" aria-hidden="true"></i>
+                        
+                            <div class="title">
+                                <h4>400+ Questions</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>Coding interview prep is a numbers game that many candidates lose. We've hand-picked 400+ of the best coding interview questions.</span>
+                            </div>
+                            
+                            <a href="#">Learn More</a>
+                            
+                        </div>
+                    </div>	 
+                    
+                    <div class="card2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                
+                        <div class="box-part text-center">
+                            
+                            <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                            
+                            <div class="title">
+                                <h4>Space-Time Complexity</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>Understanding how much memory an algorithm uses and how fast it runs is exceedingly important.Every thing explan here. </span>
+                            </div>
+                            
+                            <a href="#">Learn More</a>
+                            
+                        </div>
+                    </div>
+            
+            </div>		
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+
+<div class="footer">
+	<footer class="text-center text-white" style="background-color: #454a70;">
+		<!-- Grid container -->
+		<div class="container pt-4">
+		  <!-- Section: Social media -->
+		  <section class="mb-4">
+			<!-- Facebook -->
+			<a
+			  class="btn btn-link btn-floating btn-lg text-dark m-1"
+			  href="#!"
+			  role="button"
+			  data-mdb-ripple-color="dark"
+			  >
+			  <i class="icon fa fa-facebook" aria-hidden="true"></i>
+			</a>
+	  
+			<!-- Twitter -->
+			<a
+			  class="btn btn-link btn-floating btn-lg text-dark m-1"
+			  href="#!"
+			  role="button"
+			  data-mdb-ripple-color="dark"
+			  >
+			  <i class="icon fa fa-twitter" aria-hidden="true"></i>
+			</a>
+	  
+			<!-- Google -->
+			<a
+			  class="btn btn-link btn-floating btn-lg text-dark m-1"
+			  href="#!"
+			  role="button"
+			  data-mdb-ripple-color="dark"
+			  >
+			  <i class="icon fa fa-google-plus" aria-hidden="true"></i>
+			</a>
+	  
+			<!-- Instagram -->
+			<a
+			  class="btn btn-link btn-floating btn-lg text-dark m-1"
+			  href="#!"
+			  role="button"
+			  data-mdb-ripple-color="dark"
+			  ><i class="icon fa fa-instagram" aria-hidden="true"></i></a>
+	  
+			<!-- Linkedin -->
+			<a
+			  class="btn btn-link btn-floating btn-lg text-dark m-1"
+			  href="#!"
+			  role="button"
+			  data-mdb-ripple-color="dark"
+			  ><i class="icon fa fa-linkedin" aria-hidden="true"></i>
+			</a>
+			<!-- Github -->
+			<a
+			  class="btn btn-link btn-floating btn-lg text-dark m-1"
+			  href="#!"
+			  role="button"
+			  data-mdb-ripple-color="dark"
+			  ><i class="icon fa fa-github" aria-hidden="true"></i>
+			</a>
+		  </section>
+		  <!-- Section: Social media -->
+		</div>
+		<!-- Grid container -->
+	  
+		<!-- Copyright -->
+		<div class="text-center text-dark p-3" style="background-color:  #011835;">
+		  © 2020 Copyright:
+		  <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+		</div>
+		<!-- Copyright -->
+	  </footer>
+</div>
+
+
+
+<!-- for code codeEditor -->
+
+{% endblock %}

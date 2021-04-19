@@ -1,0 +1,225 @@
+{% extends 'home/index.html'  %}
+
+{% block head %}
+<link href="/static/assets/css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- code edi... -->
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+<style>
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 0%;
+  background-color: #83cff3;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+
+
+.content{
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.container{
+
+   margin:5px;
+   background-color:rgb(252, 252, 250);
+   margin-left: 7pc;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container{
+
+    margin:5px;
+    background-color:rgb(252, 252, 250);
+    
+  }
+    
+}
+div.content {
+    margin-top: 5pc;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(255, 255, 255);
+    position: absolute;
+    right: 0;
+    
+} 
+
+
+.feedback {
+  background-color : #31B0D5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #46b8da;
+}
+
+#mybutton {
+  position: fixed;
+  bottom: -4px;
+  left: 10px;
+}
+
+/* video */
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#a1 {
+  text-align: center;
+  color: rgb(27, 59, 95);
+}
+
+#ab {
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page{
+  text-align: center;
+  padding-left: 40%;
+  position: absolute;
+  justify-content: center;
+}
+
+.b {
+  font-size: xx-large;
+  margin-left: 4px;
+}
+
+</style>
+  
+{% endblock %}
+
+{% block body %}
+
+<div class="sidebar">
+    <h1><br></h1>
+    <a href="/array" role="button" aria-pressed="true" >Array</a>
+    <a href="/stack" role="button" aria-pressed="true" >Stack & Queue</a>
+    <a href="/matrix" role="button" aria-pressed="true" >Matrix</a>
+    <a href="/string" role="button" aria-pressed="true" >String</a>
+    <a href="/search&sorting" role="button" aria-pressed="true" >Searching & Sorting</a>
+    <a href="/linklist" role="button" aria-pressed="true" >LinkedList</a>
+    <a href="/binarytree" role="button" aria-pressed="true" >Binary Trees</a>
+    <a href="/binarysearchtree" role="button" aria-pressed="true" >Binary Search Trees</a>
+    <a href="/greedy" role="button" aria-pressed="true" >Greedy</a>
+    <a href="/backtracking" role="button" aria-pressed="true" >BackTracking</a>
+    <a href="/heap" role="button" aria-pressed="true" >Heap</a>
+    <a href="/graph" role="button" aria-pressed="true" >Graph</a>
+    <a href="/tire" role="button" aria-pressed="true" >Trie</a>
+    <a href="/dynamic" role="button" aria-pressed="true" >Dynamic Programming</a>
+    <a href="/bit" role="button" aria-pressed="true" >Bit Manipulation</a>
+</div>
+
+<div id="ab" class="content">
+  <!-- content present below this line -->
+  {% for post in users %}
+  <!-- when new topic start add this h1 tag change the topic name -->
+  <h4 id="a1"><u>Questions by Love Babbar: {{ post.tag }}</u></h4>
+  <br>
+
+  
+  <!-- Questions Start -->
+    <div id="array1" class="container">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.intro }}</p>
+      <h3>Example :</h3>
+      
+      <pre style="background-color: #e9faff;">
+       {{ post.exmple }}
+      </pre>
+      <!-- code use  -->
+      <a href="{% url 'desc' post.id %}" role="button" aria-pressed="true">Read more</a>
+    </div>
+    <br>
+  <!-- Questions end -->
+  {% endfor %}
+  <!-- paging -->
+  <div class="container page">
+        {% if users.has_other_pages %}
+          <ul class="pagination">
+            {% if users.has_previous %}
+              <li><a href="?page={{ users.previous_page_number }}" class="b" style="padding-top: 5px;">&laquo;</a></li>
+            {% else %}
+              <li class="disabled b"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in users.paginator.page_range %}
+              {% if users.number == i %}
+                <li class="active b"><span>{{ i }} 
+              {% else %}
+                <li><a class="b" href="?page={{ i }}">{{ i }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% if users.has_next %}
+              <li><a href="?page={{ users.next_page_number }}" class="b">&raquo;</a></li>
+            {% else %}
+              <li class="disabled b"><span>&raquo;</span></li>
+            {% endif %}
+          </ul>
+        {% endif %}
+</div>
+
+<div style="margin-top: 0%" id="mybutton">
+  <button id="click" class="feedback">Manu</button>
+</div>
+  
+</div>
+
+
+
+<script type="text/javascript">
+    $("#click").click(function(){
+      $("div.sidebar").animate({width:"28%"});
+      $("div.content").animate({width: "70%"});
+      $(this).hide();
+    });
+
+    $("div.sidebar").click(function(){
+      $(this).animate({width :"0%"});
+      $("div.content").animate({width:"100%"});
+      $("#click").show();
+    });
+</script>
+<!-- for code codeEditor -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+{% endblock %}
