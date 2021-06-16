@@ -1,6 +1,6 @@
 {% extends 'home/index.html'  %}
 {% load embed_video_tags %}
-{% load comment_tags %} 
+{% load comment_tags %}
 {% include_bootstrap %}
 
 
@@ -9,8 +9,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <!-- code edi... -->
 <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/agate.min.css">
 <style>
+
+ body {
+  margin-right: 5px;
+  margin-left: 0px;
+ }
 .sidebar {
   margin: 0;
   padding: 0;
@@ -27,7 +32,7 @@
   padding: 16px;
   text-decoration: none;
 }
- 
+
 
 .sidebar a:hover:not(.active) {
   background-color: #555;
@@ -47,9 +52,9 @@
 
     margin:5px;
     background-color:rgb(252, 252, 250);
-    
+
   }
-    
+
 }
 div.content {
     margin-top: 5pc;
@@ -58,8 +63,8 @@ div.content {
     background-color:rgb(255, 255, 255);
     position: absolute;
     right: 0;
-    
-} 
+
+}
 
 
 .feedback {
@@ -108,8 +113,12 @@ div.content {
   margin-right: 10px;
 }
 
+.hight {
+ height: 30pc;
+}
+
 </style>
-  
+
 {% endblock %}
 
 {% block body %}
@@ -129,45 +138,54 @@ div.content {
       <div id="array1" class="container">
         <h2>{{ object.title }}</h2>
         <p class="article-content"> {{ object.intro }}</p>
-        
+
         <pre>
           {{ object.exmple }}
         </pre>
+
 
         <!-- body -->
         <p class="article-content">
           {{ object.body }}
         </p>
         <!-- code use  -->
-        <pre>
+
+        <pre class="hight">
           <code>
           {{ object.code }}
-            
+
           </code><!-- here write second code -->
         </pre>
 
           <!-- use second code solution if present check time Complexity and use "code" tag-->
           <!-- <code>
                 write here -->
-          <!-- code --> 
-      
+          <!-- code -->
+
           <!-- code end  -->
-      
+
 
         <!-- youtube video -->
-        <div class="video-container">
-            
+        <div class="video-container hight">
+
           {% video object.video 'medium' %}
         </div>
         <br>
+
+         <div style="border: solid;">
+            <h4 style="color:red;text-align: center;">solve this question also</h4>
+               {% for tag in view.get_tags %}
+                 <p><li>{{tag}}</li></p>
+               {% endfor %}
+         </div>
         <br>
-        {% render_comments object request %} 
+        {% render_comments object request %}
 
      </div>
 
   </div>
     <!-- Questions end -->
-      
+
 </div>
 
 

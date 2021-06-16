@@ -16,6 +16,7 @@ path('ds/',views.ds, name="Ds_&_algo"),
 path('about/',views.about, name="about"),
 path('contact/',views.contact, name="contact"),
 path('desc/<int:pk>/', PostDetailView.as_view(),name="desc"),
+
 path('comment/', include('comment.urls')),
 path('signup',views.signup, name="singup"),
 path('Login',views.login, name="login"),

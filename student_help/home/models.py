@@ -47,7 +47,7 @@ class Content(models.Model):
 
 # save the record with title name
     def __str__(self):
-        return 'New record:'+self.title 
+        return self.title 
     
 
 

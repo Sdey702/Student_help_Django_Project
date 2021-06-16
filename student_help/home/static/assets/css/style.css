@@ -58,7 +58,7 @@ body {
 	position: absolute;
 	background-color: #fff;
 	color: #000;
-	clip-path: inset(-1% -1% 50% -1%); 
+	clip-path: inset(-1% -1% 50% -1%);
 }
 
 
@@ -66,9 +66,9 @@ body {
 
 
 a{
-  text-decoration:none; 
+  text-decoration:none;
   color: #0062cc;
-  
+
 }
 .box{
     padding:55px 0px;
@@ -90,7 +90,7 @@ a{
 
 
    /* card effect */
- 
+
    .card2:hover {
       transition: all 0.2s ease-out;
       box-shadow: 2px 4px 8px rgba(38, 38, 38, 0.2);
@@ -98,7 +98,7 @@ a{
       border: 1px solid #423f3f;
       background-color: #4183D7;
     }
-/*   
+/*
     .card2:before {
       content: "";
       position: absolute;
@@ -120,7 +120,7 @@ a{
 
 
     /* code */
- 
+
   .last{
     height: 400px;
   }
@@ -128,7 +128,7 @@ a{
   .codeEditor {
     margin-top: 10px;
     text-align: left;
- 
+
   }
 
   #edit {
@@ -163,7 +163,7 @@ a{
 }
 
 #minimal-statistics{
-  margin-top: 20pc; 
+  margin-top: 20pc;
   background-color: #011835;
 }
 
@@ -201,30 +201,30 @@ a{
       margin: 0;
       border: 0ch;
     }
-    
+
     /* nav dropdown */
-    
-    
+
+
       .codeEditor {
         margin-top: 20px;
         text-align: left;
 
       }
-    
+
       #edit {
         color: #0b1a2e;
         text-align: center;
-    
+
       }
-    
+
 
       .question p {
 
         color: rgba(247, 247, 247, 0.89);
         margin-left: 1px;
         margin-right: 1px;
-      
+
       }
-    
-  } 
+
+  }
 

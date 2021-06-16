@@ -1,5 +1,5 @@
 {% extends 'blog/base.html'  %}
-{% load comment_tags %} 
+{% load comment_tags %}
 {% block head%}
 <style>
     body {
@@ -7,31 +7,31 @@
     color: #333333;
     margin-top: 5rem;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
   }
-  
+
   ul {
     margin: 0;
   }
-  
+
   .bg-steel {
     background-color: #5f788a;
   }
-  
+
   .site-header .navbar-nav .nav-link {
     color: #cbd5db;
   }
-  
+
   .site-header .navbar-nav .nav-link:hover {
     color: #ffffff;
   }
-  
+
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
-  
+
   .content-section {
     background: #ffffff;
     padding: 10px 20px;
@@ -39,37 +39,37 @@
     border-radius: 3px;
     margin-bottom: 20px;
   }
-  
+
   .article-title {
     color: #444444;
   }
-  
+
   a.article-title:hover {
     color: #428bca;
     text-decoration: none;
   }
-  
+
   .article-content {
     white-space: pre-line;
   }
-  
+
   .article-img {
     height: 65px;
     width: 65px;
-    margin-right: 16px;
+    margin-right: 0px;
   }
-  
+
   .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
     border-bottom: 1px solid #e3e3e3
   }
-  
+
   .article-metadata a:hover {
     color: #333;
     text-decoration: none;
   }
-  
+
   .article-svg {
     width: 25px;
     height: 25px;
@@ -79,32 +79,32 @@
   .media-body img {
      margin-left: 12pc;
   }
-  @media only screen and (max-width: 600px) { 
-    
+  @media only screen and (max-width: 600px) {
+
     h1, h2, h3, h4, h5, h6 {
     color: #444444;
   }
-  
+
   ul {
     margin: 0;
   }
-  
+
   .bg-steel {
     background-color: #5f788a;
   }
-  
+
   .site-header .navbar-nav .nav-link {
     color: #cbd5db;
   }
-  
+
   .site-header .navbar-nav .nav-link:hover {
     color: #ffffff;
   }
-  
+
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
-  
+
   .content-section {
     background: #ffffff;
     padding: 10px 20px;
@@ -112,47 +112,42 @@
     border-radius: 3px;
     margin-bottom: 20px;
   }
-  
+
   .article-title {
     color: #444444;
   }
-  
+
   a.article-title:hover {
     color: #428bca;
     text-decoration: none;
   }
-  
+
   .article-content {
     white-space: pre-line;
   }
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
+
+
   .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
     border-bottom: 1px solid #e3e3e3
   }
-  
+
   .article-metadata a:hover {
     color: #333;
     text-decoration: none;
   }
-  
+
   .article-svg {
     width: 25px;
     height: 25px;
     vertical-align: middle;
   }
-  
+
   .media-body img {
     margin-left: 0px;
-    height: 200px;
-    width: 300px;
+    height: 50%;
+    width: 100%;
   }
 
 
@@ -178,7 +173,7 @@
     </article>
     <br>
 <br>
-{% render_comments post request %} 
+{% render_comments post request %}
 </div>
 
 {% endblock %}
