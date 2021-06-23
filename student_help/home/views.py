@@ -1,5 +1,6 @@
 from typing import NoReturn
 from django.shortcuts import render,redirect
+from django.http import JsonResponse
 from .models import Content,Userprofile
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -27,6 +28,8 @@ df.columns = [ x.lower() for x in df.columns ]
 df['title']=df['title'].apply(lambda x : x.lower())
 df['genre']=df['genre'].apply(lambda x : x.lower())
 all_titles = [df['title'][i] for i in range(len(df['title']))]
+
+# print(all_titles)
 # def re(str):
 #     print(str)
 
@@ -149,8 +152,7 @@ def qus(request,tag):
 def about(request):
     return render(request,'home/about.html')
 
-def contact(request):
-    return render(request,'home/contact.html')
+
 
 
 # new user registation
@@ -225,6 +227,56 @@ def profile(request):
         'p_form': p_form
     }
     return render(request,'home/profile.html',context)
+
+
+
+
+# search
+
+def search(request):
+
+    abc = request.GET.get('search')
+    # print(abc)
+    list=[]
+    if abc:
+        post=Content.objects.filter(title__icontains=abc)
+
+        for i in range(len(post)):
+
+            list.append(str(post[i]))
+
+    return JsonResponse({'status':200,'data':list})
+
+
+def search_results(request):
+
+    if request.method == 'POST' :
+        question = request.POST['search']
+        # print(question)
+
+        posts = Content.objects.filter(title=question)
+
+        # print(Content.objects.filter(title__icontains=question).values())
+
+
+        if len(posts) == 0:
+            return render(request,'home/search.html')
+
+        page = request.GET.get('page', 1)
+
+        paginator = Paginator(posts, 4)
+        try:
+            users = paginator.page(page)
+        except PageNotAnInteger:
+            users = paginator.page(1)
+        except EmptyPage:
+            users = paginator.page(paginator.num_pages)
+
+        return render(request,'home/DS-array.html',{'users': users})
+
+    return render(request,'home/search.html')
+
+
 
 
 

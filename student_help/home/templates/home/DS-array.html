@@ -6,7 +6,15 @@
 <!-- code edi... -->
 <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+
+<!-- autocomplete -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css"
+/>
+
 <style>
+
 .sidebar {
   margin: 0;
   padding: 0;
@@ -23,8 +31,6 @@
   padding: 16px;
   text-decoration: none;
 }
- 
-
 
 .content{
    margin-left: 5px;
@@ -38,21 +44,43 @@
 
 .container{
 
-   margin:5px;
+   margin:4px;
    background-color:rgb(252, 252, 250);
-   margin-left: 7pc;
+   margin-left: 8.1pc;
 }
+
+.border {
+   border-color: red;
+   width: 80%;
+}
+
 
 @media only screen and (max-width: 600px) {
 
+  .body {
+
+     margin: 0;
+     padding: 0;
+     width: 0%;
+}
   .container{
 
-    margin:5px;
+/*    margin:5px;*/
     background-color:rgb(252, 252, 250);
-    
+    margin-left: 40px;
+
   }
-    
+
+
+  /*search*/
+ .search {
+    width: 90%;
+ }
+
+
 }
+
+
 div.content {
     margin-top: 5pc;
     width: 100%;
@@ -60,8 +88,8 @@ div.content {
     background-color:rgb(255, 255, 255);
     position: absolute;
     right: 0;
-    
-} 
+
+}
 
 
 .feedback {
@@ -122,11 +150,40 @@ div.content {
   margin-left: 4px;
 }
 
+/* for search */
+.search {
+  margin-top:5pc;
+  width: 50%;
+  margin-left: 25%;
+
+}
+
+
+.result-list {
+  margin-left: 70px;
+
+}
+
+
 </style>
-  
+
 {% endblock %}
 
 {% block body %}
+
+    <!-- search bar -->
+    <form action="/search-result" method="POST" >
+
+          <div id="autocomplete" class="autocomplete">
+            <input  name="search" class=" search autocomplete-input" />
+            <ul class="autocomplete-result-list" style=" text-align: center;"></ul>
+          </div>
+
+
+      {% csrf_token %}
+    </form>
+
+
 
 <div class="sidebar">
     <h1><br></h1>
@@ -147,6 +204,9 @@ div.content {
     <a href="/bit" role="button" aria-pressed="true" >Bit Manipulation</a>
 </div>
 
+
+
+
 <div id="ab" class="content">
   <!-- content present below this line -->
   {% for post in users %}
@@ -154,13 +214,13 @@ div.content {
   <h4 id="a1"><u>Questions by Love Babbar: {{ post.tag }}</u></h4>
   <br>
 
-  
+
   <!-- Questions Start -->
-    <div id="array1" class="container">
+    <div id="array1" class="container border">
       <h2>{{ post.title }}</h2>
       <p>{{ post.intro }}</p>
       <h3>Example :</h3>
-      
+
       <pre style="background-color: #e9faff;">
        {{ post.exmple }}
       </pre>
@@ -181,7 +241,7 @@ div.content {
             {% endif %}
             {% for i in users.paginator.page_range %}
               {% if users.number == i %}
-                <li class="active b"><span>{{ i }} 
+                <li class="active b"><span>{{ i }}
               {% else %}
                 <li><a class="b" href="?page={{ i }}">{{ i }}</a></li>
               {% endif %}
@@ -198,7 +258,7 @@ div.content {
 <div style="margin-top: 0%" id="mybutton">
   <button id="click" class="feedback">Manu</button>
 </div>
-  
+
 </div>
 
 
@@ -215,11 +275,35 @@ div.content {
       $("div.content").animate({width:"100%"});
       $("#click").show();
     });
+
+
 </script>
 <!-- for code codeEditor -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
 <script>
 	hljs.initHighlightingOnLoad();
+</script>
+<!-- autocomplete -->
+<script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+<script>
+  new Autocomplete('#autocomplete', {
+     search: input => {
+        // console.log(input)
+        const url = `/search?search=${input}`
+        return new Promise(resolve => {
+                 fetch(url)
+                .then(response => response.json())
+                .then(data =>{
+                  // console.log(data)
+                  // console.log(data.data)
+                  resolve(data.data)
+
+                })
+
+        })
+     }
+
+  })
 </script>
 
 {% endblock %}

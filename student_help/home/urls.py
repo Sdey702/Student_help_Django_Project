@@ -14,7 +14,6 @@ path('', views.index, name="index"),
 path('blog/',include('Blog.urls')),
 path('ds/',views.ds, name="Ds_&_algo"),
 path('about/',views.about, name="about"),
-path('contact/',views.contact, name="contact"),
 path('desc/<int:pk>/', PostDetailView.as_view(),name="desc"),
 
 path('comment/', include('comment.urls')),
@@ -23,6 +22,8 @@ path('Login',views.login, name="login"),
 path('Logout',views.logout, name="logout"),
 path('profile',views.profile, name="profile"),
 path('accounts/login/',views.index, name="login"),
+path('search',views.search, name="search"),
+path('search-result',views.search_results,name="search_results"),
 
 
 path('array/',views.qus,{'tag':'array'}, name="array"),

@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'embed_video',
     'comment',
-   
+
 ]
 
 MIDDLEWARE = [
@@ -63,8 +63,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'student_help.urls'
 
 TEMPLATES = [
-    {    
-        
+    {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'student_help.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = 
+# DATABASES =
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
@@ -196,8 +196,8 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'subhankardey.kalirhat@gmail.com'
-EMAIL_HOST_PASSWORD = 'subhankar@9635'
+EMAIL_HOST_USER = 'studenthelp.snr@gmail.com'
+EMAIL_HOST_PASSWORD = 'snr@9635'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
