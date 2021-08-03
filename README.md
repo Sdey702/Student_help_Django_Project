@@ -2,11 +2,11 @@
 A website for students with free resources.
 # This web site provied lot's of function :
 
-. Students can learn lot's of subject like Data Structure and Algorithm.
-. You can update your profile picture,Phone No. 
-. you can read blog or you can write/post a blog .
-. you can comment on every post and like or dislike the post.
-. Recommendation with your topic.
+1. Students can learn lot's of subject like Data Structure and Algorithm.
+2. You can update your profile picture,Phone No. 
+3. you can read blog or you can write/post a blog .
+4. you can comment on every post and like or dislike the post.
+5. Recommendation with your topic.
 
 # demo :
 ### This Link valid for 22 september 2021
