@@ -10,7 +10,7 @@ A website for students with free resources.
 
 # demo :
 ### This Link valid for 22 september 2021
-Here Recommendation not work because we use free hosting [pythonanywhere] I solve this problem very soon "\n"
+Here Recommendation not work because we use free hosting [pythonanywhere] I solve this problem very soon <br>
 LINK :http://sdey.pythonanywhere.com/ 
 
 ### For video of demonstration click now.
